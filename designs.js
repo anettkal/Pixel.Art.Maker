@@ -9,21 +9,26 @@ const widthElement = document.getElementById("inputWidth");
 const table = document.getElementById("pixelCanvas");
 const color = document.getElementById("colorPicker");
 
-
 const height = Number(heightElement.value);
 const width = Number(widthElement.value);
 
+document.querySelector("#pixelCanvas").innerHTML="";
 
 for (let i = 0; i < height; i++){
-   let tableRow = table.insertRow();
-   for (let j = 0; j < width; j++ ) {
-      let tableCell = tableRow.insertCell();
-//colorChange(event);
-  }
- }
-}
+    let tableRow = table.insertRow();
+    for (let j = 0; j < width; j++ ) {
+        let tableCell = tableRow.insertCell();
+        tableCell.addEventListener('click', function() {
+            var col = document.getElementById("colorPicker").value;
+            tableCell.style.backgroundColor = col;
+});
+    }
+        }
+            }
 
- function colorChange(){
-document.getElementById("colorPicker").addEventListener('click');
+const form = document.getElementById("sizePicker");
+form.onsubmit = function(event) {
+    makeGrid();
+    event.preventDefault();
+    return false;
 }
-makeGrid();
