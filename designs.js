@@ -30,5 +30,5 @@ form.addEventListener('submit', onSubmit);
 function onSubmit (event) {
   makeGrid();
   event.preventDefault();
-  return false
+  return false;
 }
